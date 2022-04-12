@@ -4,4 +4,4 @@ TRASHDIR=/home/$USER/.local/share/Trash/files
 cd $TRASHDIR
 echo User trash size: `du -sh /$TRASHDIR`
 echo =========================================================
-for FILE in *; do echo -[$FILE]; done
+for FILE in *; do echo -[`du -sh "$FILE"`]; done
