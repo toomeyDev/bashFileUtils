@@ -19,7 +19,7 @@ help()
 
 while getopts ":h" option; do
     case $option in
-    h)
+    h) # display a help message
         help
         exit;;
     esac
@@ -29,7 +29,3 @@ cd /$HOME
 echo Top $1 Directories in HOME from largest to smallest:
 echo =========================================================
 du -Sh | sort -rhs | head -$1
-
-
-
-
