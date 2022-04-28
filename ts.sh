@@ -5,15 +5,17 @@ TRASHDIR=/home/$USER/.local/share/Trash/files
 help()
 {
 	# Dsiplay help information to user
-	echo "========================================================="
-	echo "ts moves to the user's trash directory and lists out all the files/folders present inside,"
-	echo "with the filesize displayed next to each item, the total size of the trash directory at top."
-	echo "Syntax: ls [-d/-h]"
-	echo "Options:"
-	echo "-d    Delete the contents of the user trash directory after displaying them."
-	echo "Note that this will delete these items PERMANENTLY."
-	echo "-h    Show this help message."  
-	echo
+	echo "=========================================================+"
+	echo "|ts moves to the user's trash directory and lists out all|" 
+	echo "|the files/folders present inside, with the filesize     |"
+	echo "|displayed next to each item, the total size of the trash|"
+	echo "|directory at top. | Syntax: ls [-d/-h]                  |"
+	echo "|Options:                                                |"
+	echo "|-d    Delete the contents of the user trash directory   |"
+	echo "|after displaying them. Note that this will delete these |"
+	echo "| items PERMANENTLY.                                     |"
+	echo "|-h    Show this help message.                           |"  
+	echo "+========================================================+"
 }
 
 getTrashSize()
