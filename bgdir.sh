@@ -27,7 +27,13 @@ while getopts ":h" option; do
     esac
 done
 
-cd /$HOME
-echo Top $1 Directories in HOME from largest to smallest:
-echo =========================================================
-du -Sh | sort -rhs | head -$1
+cd
+if [[ -n $1 ]]; then
+    echo Top $1 Directories in HOME from largest to smallest:
+    echo =========================================================
+    du -hd1 | sort -rhs | head -$1
+else
+    echo Top 15 Directories in HOME from largest to smallest:
+    echo =========================================================
+    du -hd1 | sort -rhs | head -15
+fi
