@@ -1,7 +1,13 @@
 #!/bin/bash
 # A script to automatically count the size of files in the user trash folder
-TRASHDIR=/home/$USER/.local/share/Trash/files
 
+# get appropriate file directory for OSX/Linux
+if [[ $(uname) == "Darwin" ]] 
+then
+	TRASHDIR=$HOME/.Trash
+else
+	TRASHDIR=/home/$USER/.local/share/Trash/files
+fi
 help()
 {
 	# Dsiplay help information to user
@@ -13,7 +19,7 @@ help()
 	echo "|Options:                                                |"
 	echo "|-d    Delete the contents of the user trash directory   |"
 	echo "|after displaying them. Note that this will delete these |"
-	echo "| items PERMANENTLY.                                     |"
+	echo "|items PERMANENTLY.                                     |"
 	echo "|-h    Show this help message.                           |"  
 	echo "+========================================================+"
 }
